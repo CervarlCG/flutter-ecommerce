@@ -17,7 +17,7 @@ class ProductCard extends StatelessWidget {
         key: Key(product.id),
         shadowColor: Colors.transparent,
         child: Padding(
-            padding: EdgeInsets.all(spacing(1)),
+            padding: const EdgeInsets.all(Spacings.normal),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
@@ -26,7 +26,7 @@ class ProductCard extends StatelessWidget {
                   child: Stack(clipBehavior: Clip.none, children: [
                     Container(),
                     ClipRRect(
-                      borderRadius: BorderRadius.circular(spacing(0.4)),
+                      borderRadius: BorderRadius.circular(Spacings.sm),
                       child: Image(
                         image: NetworkImage(product.image),
                       ),
@@ -34,8 +34,7 @@ class ProductCard extends StatelessWidget {
                   ]),
                 ),
                 Padding(
-                    padding: EdgeInsets.only(
-                        top: spacing(0.5), bottom: spacing(0.5)),
+                    padding: EdgeInsets.only(top: Spacings.sm),
                     child: Text(product.name,
                         style: TextStyle(color: theme.colorScheme.secondary))),
                 Row(
@@ -51,9 +50,9 @@ class ProductCard extends StatelessWidget {
                               const SnackBar(
                                   content: Center(child: Text("Test"))));
                         },
-                        icon: Icon(
+                        icon: const Icon(
                           Icons.shopping_cart,
-                          size: spacing(1),
+                          size: Spacings.normal,
                         ))
                   ],
                 )

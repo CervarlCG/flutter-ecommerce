@@ -37,7 +37,7 @@ class _ProductsViewState extends State<ProductsView>
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Padding(
-          padding: EdgeInsets.only(bottom: spacing(0.5)),
+          padding: EdgeInsets.only(bottom: Spacings.sm),
           child: Text(
             widget.title,
             style: titleStyle,
@@ -50,8 +50,8 @@ class _ProductsViewState extends State<ProductsView>
               return LayoutGrid(
                 columnSizes: [1.fr, 1.fr],
                 rowSizes: const [auto, auto],
-                columnGap: spacing(1),
-                rowGap: spacing(1),
+                columnGap: Spacings.normal,
+                rowGap: Spacings.normal,
                 children: recommendedProductsList[index]
                     .products
                     .map((product) {

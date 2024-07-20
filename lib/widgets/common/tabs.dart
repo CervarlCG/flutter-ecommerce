@@ -63,9 +63,9 @@ class _TabsContainerState extends State<TabsContainer>
                   blurRadius: 20,
                   offset: Offset(0, 3))
             ],
-            borderRadius: BorderRadius.circular(spacing(1))),
+            borderRadius: BorderRadius.circular(Spacings.normal)),
         indicatorPadding: EdgeInsets.symmetric(
-            vertical: spacing(0.5), horizontal: spacing(-1.5)),
+            vertical: Spacings.sm, horizontal: -Spacings.md),
         indicatorSize: TabBarIndicatorSize.label,
         overlayColor: WidgetStateColor.transparent,
         dividerColor: Colors.transparent,

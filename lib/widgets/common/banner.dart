@@ -38,7 +38,7 @@ class BannerWidget extends StatelessWidget {
                     schema.content,
                     textAlign: TextAlign.center,
                   ),
-                  SizedBox(height: spacing(2)),
+                  SizedBox(height: Spacings.lg),
                   ElevatedButton(
                     child: Text(schema.cta.name),
                     onPressed: () {},

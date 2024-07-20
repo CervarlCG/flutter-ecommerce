@@ -44,7 +44,9 @@ class _HomeView extends State<HomeView> {
                 ),
                 Padding(
                   padding: EdgeInsets.only(
-                      left: spacing(1), right: spacing(1), top: spacing(2)),
+                      left: Spacings.normal,
+                      right: Spacings.normal,
+                      top: Spacings.lg),
                   child: ProductsView(
                     recommendedProductsList: recommendedProducts,
                     title: template.recommendedProducts.title,
