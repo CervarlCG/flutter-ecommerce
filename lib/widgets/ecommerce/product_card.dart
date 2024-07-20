@@ -17,7 +17,11 @@ class ProductCard extends StatelessWidget {
         key: Key(product.id),
         shadowColor: Colors.transparent,
         child: Padding(
-            padding: const EdgeInsets.all(Spacings.normal),
+            padding: EdgeInsets.only(
+                top: Spacings.normal,
+                left: Spacings.normal,
+                right: Spacings.normal,
+                bottom: Spacings.sm),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
