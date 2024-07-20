@@ -6,5 +6,6 @@ Map<String, dynamic> homeCMSContent = {
     'backgroundImage':
         "https://i.ibb.co/YkrmGGT/White-Living-Room-Chair-Mockup-1-1.jpg",
     'cta': {'name': 'Explore products'}
-  }
+  },
+  'recommendedProducts': {'title': 'Popular Choices'}
 };

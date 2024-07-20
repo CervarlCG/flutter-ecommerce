@@ -9,9 +9,10 @@ import 'package:flutter_layout_grid/flutter_layout_grid.dart';
 
 class RecommendedProductsView extends StatefulWidget {
   const RecommendedProductsView(
-      {required this.recommendedProductsList, super.key});
+      {required this.recommendedProductsList, required this.title, super.key});
 
   final RecommendedProductsList recommendedProductsList;
+  final String title;
 
   @override
   State<RecommendedProductsView> createState() =>
@@ -21,12 +22,10 @@ class RecommendedProductsView extends StatefulWidget {
 class _RecommendedProductsViewState extends State<RecommendedProductsView>
     with TickerProviderStateMixin {
   late final RecommendedProductsList recommendedProductsList;
-  late final TabController _tabController;
 
   @override
   void initState() {
     super.initState();
-    _tabController = TabController(length: 4, vsync: this);
     recommendedProductsList = widget.recommendedProductsList;
   }
 
@@ -41,7 +40,7 @@ class _RecommendedProductsViewState extends State<RecommendedProductsView>
         Padding(
           padding: EdgeInsets.only(bottom: spacing(0.5)),
           child: Text(
-            "Recommended products",
+            widget.title,
             style: titleStyle,
           ),
         ),
