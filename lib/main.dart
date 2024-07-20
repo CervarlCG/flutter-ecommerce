@@ -1,9 +1,16 @@
+import 'package:ecommerce/models/entities/store.dart';
 import 'package:ecommerce/models/theme/theme_data.dart';
 import 'package:ecommerce/screens/home.dart';
 import 'package:flutter/material.dart';
+import 'package:provider/provider.dart';
 
 void main() {
-  runApp(const EcommerceApp());
+  runApp(MultiProvider(
+    providers: [
+      Provider(create: (context) => Store(currency: 'USD', decimals: 2))
+    ],
+    child: const EcommerceApp(),
+  ));
 }
 
 class EcommerceApp extends StatelessWidget {
