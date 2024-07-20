@@ -2,14 +2,14 @@ import 'package:ecommerce/mock/products.dart';
 import 'package:ecommerce/models/entities/product.dart';
 
 class ProductsFetcher {
-  Future<RecommendedProductsList> getRecommendedProducts() async {
+  Future<ProductsByCategoryList> getRecommendedProducts() async {
     return [
-      RecommendedProducts(
+      ProductsByCategory(
           category: categoryRoom,
           products: [product1, product2, product3, product4]),
-      RecommendedProducts(
+      ProductsByCategory(
           category: categoryLivingRoom, products: [product5, product6]),
-      RecommendedProducts(category: categoryKitchen, products: [])
+      ProductsByCategory(category: categoryKitchen, products: [])
     ];
   }
 }

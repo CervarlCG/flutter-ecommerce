@@ -3,8 +3,7 @@ import 'package:ecommerce/models/schemas/templates/home.dart';
 import 'package:ecommerce/models/theme/spacing.dart';
 import 'package:ecommerce/services/cms_fetcher.dart';
 import 'package:ecommerce/services/products_fetcher.dart';
-import 'package:ecommerce/widgets/common/tabs.dart';
-import 'package:ecommerce/widgets/ecommerce/recommended_products.dart';
+import 'package:ecommerce/widgets/ecommerce/products_view.dart';
 import 'package:flutter/material.dart';
 import '../widgets/common/banner.dart';
 
@@ -18,7 +17,7 @@ class HomeView extends StatefulWidget {
 class _HomeView extends State<HomeView> {
   final String templateName = "home";
   late Future<HomeTemplate> template;
-  late Future<RecommendedProductsList> recommendedProducts;
+  late Future<ProductsByCategoryList> recommendedProducts;
 
   @override
   void initState() {
@@ -36,8 +35,8 @@ class _HomeView extends State<HomeView> {
         builder: (context, snapshot) {
           if (snapshot.hasData) {
             HomeTemplate template = snapshot.data![0] as HomeTemplate;
-            RecommendedProductsList recommendedProducts =
-                snapshot.data![1] as RecommendedProductsList;
+            ProductsByCategoryList recommendedProducts =
+                snapshot.data![1] as ProductsByCategoryList;
             return ListView(
               children: [
                 BannerWidget(
@@ -46,7 +45,7 @@ class _HomeView extends State<HomeView> {
                 Padding(
                   padding: EdgeInsets.only(
                       left: spacing(1), right: spacing(1), top: spacing(2)),
-                  child: RecommendedProductsView(
+                  child: ProductsView(
                     recommendedProductsList: recommendedProducts,
                     title: template.recommendedProducts.title,
                   ),

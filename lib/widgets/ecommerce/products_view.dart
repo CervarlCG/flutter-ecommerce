@@ -7,21 +7,20 @@ import 'package:ecommerce/widgets/ecommerce/product_card.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_layout_grid/flutter_layout_grid.dart';
 
-class RecommendedProductsView extends StatefulWidget {
-  const RecommendedProductsView(
+class ProductsView extends StatefulWidget {
+  const ProductsView(
       {required this.recommendedProductsList, required this.title, super.key});
 
-  final RecommendedProductsList recommendedProductsList;
+  final ProductsByCategoryList recommendedProductsList;
   final String title;
 
   @override
-  State<RecommendedProductsView> createState() =>
-      _RecommendedProductsViewState();
+  State<ProductsView> createState() => _ProductsViewState();
 }
 
-class _RecommendedProductsViewState extends State<RecommendedProductsView>
+class _ProductsViewState extends State<ProductsView>
     with TickerProviderStateMixin {
-  late final RecommendedProductsList recommendedProductsList;
+  late final ProductsByCategoryList recommendedProductsList;
 
   @override
   void initState() {

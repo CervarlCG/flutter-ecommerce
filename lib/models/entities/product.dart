@@ -1,4 +1,4 @@
-typedef RecommendedProductsList = List<RecommendedProducts>;
+typedef ProductsByCategoryList = List<ProductsByCategory>;
 
 class Product {
   Product(
@@ -24,8 +24,8 @@ class ProductCategory {
   final String name;
 }
 
-class RecommendedProducts {
-  RecommendedProducts({required this.category, required this.products});
+class ProductsByCategory {
+  ProductsByCategory({required this.category, required this.products});
 
   final ProductCategory category;
   final List<Product> products;
