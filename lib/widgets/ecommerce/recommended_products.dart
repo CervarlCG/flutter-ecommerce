@@ -38,9 +38,12 @@ class _RecommendedProductsViewState extends State<RecommendedProductsView>
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(
-          "Recommended products",
-          style: titleStyle,
+        Padding(
+          padding: EdgeInsets.only(bottom: spacing(0.5)),
+          child: Text(
+            "Recommended products",
+            style: titleStyle,
+          ),
         ),
         TabsContainer(
             getTabView: (int index) {
