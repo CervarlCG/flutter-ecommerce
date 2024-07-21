@@ -1,19 +1,16 @@
 import 'package:flutter/material.dart';
 
-const Color primary = Color.fromRGBO(33, 33, 33, 1);
-const Color secondary = Colors.white;
-
 final ThemeData theme = ThemeData(
     colorScheme: const ColorScheme(
       brightness: Brightness.light,
-      primary: primary,
-      onPrimary: secondary,
+      primary: Color.fromRGBO(127, 85, 57, 1),
+      onPrimary: Colors.white,
       secondary: Color.fromRGBO(117, 117, 117, 1),
-      onSecondary: primary,
+      onSecondary: Colors.black,
       error: Color.fromRGBO(244, 67, 54, 1),
-      onError: secondary,
-      surface: secondary,
-      onSurface: primary,
+      onError: Colors.white,
+      surface: Colors.white,
+      onSurface: Colors.black,
     ),
     textTheme: const TextTheme(
         titleMedium: TextStyle(fontWeight: FontWeight.w700),
@@ -24,7 +21,7 @@ final ThemeData theme = ThemeData(
     scaffoldBackgroundColor: const Color.fromRGBO(245, 245, 245, 1),
     elevatedButtonTheme: ElevatedButtonThemeData(
         style: ElevatedButton.styleFrom(
-            backgroundColor: primary,
-            overlayColor: secondary,
-            foregroundColor: secondary,
-            textStyle: const TextStyle(color: secondary))));
+            backgroundColor: const Color.fromRGBO(127, 85, 57, 1),
+            overlayColor: Colors.white,
+            foregroundColor: Colors.white,
+            textStyle: const TextStyle(color: Colors.white))));
