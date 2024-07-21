@@ -29,7 +29,6 @@ class _HomeView extends State<HomeView> {
 
   @override
   Widget build(BuildContext context) {
-    TextStyle? titleStyle = Theme.of(context).textTheme.titleMedium;
     return FutureBuilder(
         future: Future.wait([template, recommendedProducts]),
         builder: (context, snapshot) {
