@@ -48,54 +48,55 @@ class _BottomNavigationViewState extends State<BottomNavigationView>
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
+    return Container(
         padding: EdgeInsets.only(
             left: Spacings.normal,
             right: Spacings.normal,
+            top: Spacings.normal,
             bottom: MediaQuery.of(context).padding.bottom),
-        child: Container(
-            padding: const EdgeInsets.only(
-                left: Spacings.normal, right: Spacings.normal),
-            decoration: BoxDecoration(
-                color: widget.backgroundColor,
-                borderRadius: BorderRadius.all(
-                    Radius.circular(BorderRadiusSizes.rounded))),
-            child: TabBar(
-              onTap: _handleTapOnNavigationItem,
-              controller: _tabController,
-              padding: const EdgeInsets.all(0),
-              labelPadding: const EdgeInsets.all(0),
-              tabs: mapWithIndex(widget.items, (item, index) {
-                bool isActive = index == _navIndex;
-                return Tab(
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      Icon(
-                        item.icon,
-                        color: isActive ? widget.selectedColor : widget.color,
-                        size: Spacings.normal,
-                      ),
-                      Padding(
-                        padding: EdgeInsets.only(left: Spacings.sm),
-                        child: isActive ? Text(item.label) : const SizedBox(),
-                      ),
-                    ],
+        decoration: BoxDecoration(
+          color: widget.backgroundColor,
+        ),
+        child: TabBar(
+          onTap: _handleTapOnNavigationItem,
+          controller: _tabController,
+          padding: const EdgeInsets.all(0),
+          labelPadding: const EdgeInsets.all(0),
+          tabs: mapWithIndex(widget.items, (item, index) {
+            bool isActive = index == _navIndex;
+            return Tab(
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  Icon(
+                    item.icon,
+                    color: isActive
+                        ? widget.selectedColor
+                        : widget.color.withOpacity(0.7),
+                    size: Spacings.normal,
                   ),
-                );
-              }).toList(),
-              indicator: BoxDecoration(
-                  color: widget.selectedBackgroundColor,
-                  borderRadius:
-                      BorderRadius.circular(BorderRadiusSizes.rounded)),
-              indicatorPadding: EdgeInsets.symmetric(
-                  vertical: Spacings.sm, horizontal: -Spacings.sm),
-              indicatorSize: TabBarIndicatorSize.label,
-              overlayColor: WidgetStateColor.transparent,
-              dividerColor: Colors.transparent,
-              labelColor: widget.selectedColor,
-              unselectedLabelColor: widget.color,
-            )));
+                  Text(
+                    item.label,
+                    style: TextStyle(
+                        color: isActive
+                            ? widget.selectedColor
+                            : widget.color.withOpacity(0.7)),
+                  ),
+                ],
+              ),
+            );
+          }).toList(),
+          indicator: BoxDecoration(
+              color: widget.selectedBackgroundColor,
+              borderRadius: BorderRadius.circular(BorderRadiusSizes.rounded)),
+          indicatorPadding: EdgeInsets.symmetric(
+              vertical: Spacings.none, horizontal: -Spacings.lg),
+          indicatorSize: TabBarIndicatorSize.label,
+          overlayColor: WidgetStateColor.transparent,
+          dividerColor: Colors.transparent,
+          labelColor: widget.selectedColor,
+          unselectedLabelColor: widget.color,
+        ));
   }
 }
 
