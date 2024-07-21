@@ -63,6 +63,8 @@ class _BottomNavigationViewState extends State<BottomNavigationView>
             child: TabBar(
               onTap: _handleTapOnNavigationItem,
               controller: _tabController,
+              padding: const EdgeInsets.all(0),
+              labelPadding: const EdgeInsets.all(0),
               tabs: mapWithIndex(widget.items, (item, index) {
                 bool isActive = index == _navIndex;
                 return Tab(
@@ -87,7 +89,7 @@ class _BottomNavigationViewState extends State<BottomNavigationView>
                   borderRadius:
                       BorderRadius.circular(BorderRadiusSizes.rounded)),
               indicatorPadding: EdgeInsets.symmetric(
-                  vertical: Spacings.sm, horizontal: -Spacings.md),
+                  vertical: Spacings.sm, horizontal: -Spacings.sm),
               indicatorSize: TabBarIndicatorSize.label,
               overlayColor: WidgetStateColor.transparent,
               dividerColor: Colors.transparent,

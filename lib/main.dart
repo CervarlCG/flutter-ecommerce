@@ -65,6 +65,8 @@ class _EntryPageState extends State<EntryPage> {
         items: [
           BottomNavigationViewItem(icon: FeatherIcons.home, label: 'Home'),
           BottomNavigationViewItem(
+              icon: FeatherIcons.shoppingBag, label: 'Shop'),
+          BottomNavigationViewItem(
               icon: FeatherIcons.shoppingCart, label: 'Cart'),
           BottomNavigationViewItem(icon: FeatherIcons.user, label: 'Account'),
         ],
