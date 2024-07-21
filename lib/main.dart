@@ -1,7 +1,9 @@
 import 'package:ecommerce/models/entities/store.dart';
 import 'package:ecommerce/models/theme/theme_data.dart';
 import 'package:ecommerce/screens/home.dart';
+import 'package:ecommerce/widgets/navigation/bottom_navigation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:provider/provider.dart';
 
 void main() {
@@ -46,14 +48,27 @@ class EntryPage extends StatefulWidget {
 class _EntryPageState extends State<EntryPage> {
   @override
   Widget build(BuildContext context) {
+    ThemeData theme = Theme.of(context);
     // This method is rerun every time setState is called, for instance as done
     // by the _incrementCounter method above.
     //
     // The Flutter framework has been optimized to make rerunning build methods
     // fast, so that you can just rebuild anything that needs updating rather
     // than having to individually change instances of widgets.
-    return const Scaffold(
-      body: HomeView(),
+    return Scaffold(
+      body: const HomeView(),
+      bottomNavigationBar: BottomNavigationView(
+        backgroundColor: theme.colorScheme.primary,
+        color: theme.colorScheme.onPrimary,
+        selectedBackgroundColor: theme.colorScheme.surface,
+        selectedColor: theme.colorScheme.onSurface,
+        items: [
+          BottomNavigationViewItem(icon: FeatherIcons.home, label: 'Home'),
+          BottomNavigationViewItem(
+              icon: FeatherIcons.shoppingCart, label: 'Cart'),
+          BottomNavigationViewItem(icon: FeatherIcons.user, label: 'Account'),
+        ],
+      ),
     );
   }
 }
