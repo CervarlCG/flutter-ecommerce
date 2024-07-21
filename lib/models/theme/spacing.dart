@@ -6,6 +6,7 @@ double spacing(double? multiplier) {
 
 final class Spacings {
   static const double normal = spacingBase;
+  static double none = 0;
   static double xs = spacing(0.3);
   static double sm = spacing(0.5);
   static double md = spacing(1.5);
