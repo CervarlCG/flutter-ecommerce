@@ -2,6 +2,7 @@ import 'package:ecommerce/models/entities/product.dart';
 import 'package:ecommerce/models/entities/store.dart';
 import 'package:ecommerce/models/theme/spacing.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_feather_icons/flutter_feather_icons.dart';
 import 'package:provider/provider.dart';
 
 class ProductCard extends StatelessWidget {
@@ -55,7 +56,7 @@ class ProductCard extends StatelessWidget {
                                   content: Center(child: Text("Test"))));
                         },
                         icon: const Icon(
-                          Icons.shopping_cart,
+                          FeatherIcons.shoppingCart,
                           size: Spacings.normal,
                         ))
                   ],
